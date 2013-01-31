@@ -1,10 +1,10 @@
 # An event logger plugin for Bukkit
 
-A Clojure library designed to ... log Bukkit events to CouchDB.
+A Clojure library designed to ... log Bukkit events to Mixpanel.
 
 ## Usage
 
-Simply clone this repository and compile using `lein jar`. This should install the required dependencies and create the required `jar` file, for Bukkit. Copy the `jar` file into Bukkit's plugin directory and then start the server. The plugin will be loaded.
+Simply clone this repository and compile using `lein uberjar`. This should install the required dependencies and create the required `jar` file, for Bukkit. Copy the `jar` file into Bukkit's plugin directory and then start the server. The plugin will be loaded.
 
 ## Class path requirements
 
@@ -16,6 +16,6 @@ java -cp ~\clojure-1.4.0.jar;~\bukkit\plugins\*;~\bukkit\craftbukkit.jar org.buk
 
 ## License
 
-Copyright Â© 2013 Ryan Cole
+Copyright © 2013 Ryan Cole
 
 Distributed under the Eclipse Public License, the same as Clojure.
