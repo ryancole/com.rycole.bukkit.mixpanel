@@ -8,9 +8,11 @@
 (def mixpanel-token "aca99527d3f43f494dd29c0c924db8ee")
 
 (defn -onPlayerJoin [this evnt]
-  (mixpanel/notify mixpanel-token "Player Joined" {:distinct-id (.getPlayerListName (.getPlayer evnt))
-                                                   :player-name (.getPlayerListName (.getPlayer evnt))}))
+  (let [player-name (.getPlayerListName (.getPlayer evnt))]
+    (future (mixpanel/notify mixpanel-token "Player Joined" {:distinct-id player-name
+                                                     				 :player-name player-name}))))
 
 (defn -onPlayerQuit [this evnt]
-  (mixpanel/notify mixpanel-token "Player Quit" {:distinct-id (.getPlayerListName (.getPlayer evnt))
-                                                 :player-name (.getPlayerListName (.getPlayer evnt))}))
+  (let [player-name (.getPlayerListName (.getPlayer evnt))]
+    (future (mixpanel/notify mixpanel-token "Player Quit" {:distinct-id player-name
+                                                           :player-name player-name}))))

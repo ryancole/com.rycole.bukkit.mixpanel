@@ -8,11 +8,15 @@
 (def mixpanel-token "aca99527d3f43f494dd29c0c924db8ee")
 
 (defn -onBlockBreak [this evnt]
-  (mixpanel/notify mixpanel-token "Block Broken" {:distinct-id (.getPlayerListName (.getPlayer evnt))
-                                                  :player-name (.getPlayerListName (.getPlayer evnt))
-                                                  :block-type (.toString (.getType (.getBlock evnt)))}))
+  (let [block-type (.toString (.getType (.getBlock evnt)))
+        player-name (.getPlayerListName (.getPlayer evnt))]
+    (future (mixpanel/notify mixpanel-token "Block Broken" {:distinct-id player-name
+                                                    				:player-name player-name
+                                                    				:block-type block-type}))))
 
 (defn -onBlockPlace [this evnt]
-  (mixpanel/notify mixpanel-token "Block Placed" {:distinct-id (.getPlayerListName (.getPlayer evnt))
-                                                  :player-name (.getPlayerListName (.getPlayer evnt))
-                                                  :block-type (.toString (.getType (.getBlockPlaced evnt)))}))
+  (let [block-type (.toString (.getType (.getBlock evnt)))
+        player-name (.getPlayerListName (.getPlayer evnt))]
+    (future (mixpanel/notify mixpanel-token "Block Placed" {:distinct-id player-name
+                                                            :player-name player-name
+                                                            :block-type block-type}))))
