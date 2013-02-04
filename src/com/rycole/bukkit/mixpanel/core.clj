@@ -8,5 +8,5 @@
 
 (defn -onEnable [this]
   (let [plugin-manager (.getPluginManager (.getServer this))]
-    (.registerEvents plugin-manager (new com.rycole.bukkit.mixpanel.listeners.block.BlockListener this) this)
-    (.registerEvents plugin-manager (new com.rycole.bukkit.mixpanel.listeners.player.PlayerListener this) this)))
+    (.registerEvents plugin-manager (com.rycole.bukkit.mixpanel.listeners.block.BlockListener.) this)
+    (.registerEvents plugin-manager (com.rycole.bukkit.mixpanel.listeners.player.PlayerListener.) this)))

@@ -7,9 +7,6 @@
 
 (def mixpanel-token "aca99527d3f43f494dd29c0c924db8ee")
 
-(defn -init [plugin]
-  [[] (atom plugin)])
-
 (defn -onBlockBreak [this evnt]
   (let [block-type (.toString (.getType (.getBlock evnt)))
         player-name (.getPlayerListName (.getPlayer evnt))]
