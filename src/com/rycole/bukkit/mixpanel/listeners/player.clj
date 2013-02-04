@@ -1,6 +1,6 @@
-(ns com.rycole.bukkit.eventlog.listeners.player
+(ns com.rycole.bukkit.mixpanel.listeners.player
   (:require [clj-mixpanel.core :as mixpanel])
-  (:gen-class :name com.rycole.bukkit.eventlog.listeners.player.PlayerListener
+  (:gen-class :name com.rycole.bukkit.mixpanel.listeners.player.PlayerListener
               :implements [org.bukkit.event.Listener]
               :methods [[^{org.bukkit.event.EventHandler true} onPlayerJoin [org.bukkit.event.player.PlayerJoinEvent] void]
                         [^{org.bukkit.event.EventHandler true} onPlayerQuit [org.bukkit.event.player.PlayerQuitEvent] void]]))

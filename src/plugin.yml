@@ -1,3 +1,3 @@
-name: eventlog
-main: com.rycole.bukkit.eventlog.core.Main
+name: mixpanel
+main: com.rycole.bukkit.mixpanel.core.Main
 version: 0.0.1
